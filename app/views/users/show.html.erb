@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @user %>
+
+<h2>First Micropost</h2>
+<% if @user.microposts.any? %>
+  <p><%= @user.microposts.first.content %></p>
+<% else %>
+  <p>No microposts yet.</p>
+<% end %>
+
+<div>
+  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <%= link_to "Back to users", users_path %>
+
+  <%= button_to "Destroy this user", @user, method: :delete %>
+</div>
